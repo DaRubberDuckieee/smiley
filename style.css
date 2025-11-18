@@ -5,96 +5,142 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
+    align-items: center;
+    padding: 20px;
 }
 
 .container {
-    text-align: center;
-    animation: fadeIn 1s ease-in;
-}
-
-.smiley {
-    width: 200px;
-    height: 200px;
-    background: #FFD700;
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: bounce 2s ease-in-out infinite;
-}
-
-.eyes {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 40px 0;
-}
-
-.eye {
-    width: 20px;
-    height: 20px;
-    background: #333;
-    border-radius: 50%;
-}
-
-.mouth {
-    width: 80px;
-    height: 40px;
-    border: 5px solid #333;
-    border-top: none;
-    border-radius: 0 0 80px 80px;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
 }
 
-p {
-    font-size: 1.5rem;
-    opacity: 0.9;
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+canvas {
+    border-radius: 10px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
 }
 
-@media (max-width: 768px) {
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.slider-group label {
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+    background: #764ba2;
+    transform: scale(1.2);
+}
+
+.slider-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.slider-group input[type="range"]::-moz-range-thumb:hover {
+    background: #764ba2;
+    transform: scale(1.2);
+}
+
+.slider-group span {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: 1.5em;
     }
-    p {
-        font-size: 1.2rem;
-    }
-    .smiley {
-        width: 150px;
-        height: 150px;
+
+    canvas {
+        width: 100%;
+        height: auto;
     }
 }

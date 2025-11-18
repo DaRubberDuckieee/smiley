@@ -3,20 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smiley 😊</title>
+    <title>Smiley Face Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="smiley">
-            <div class="eyes">
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-            </div>
-            <div class="mouth"></div>
+        <h1>Smiley Face Generator</h1>
+
+        <div class="canvas-container">
+            <canvas id="smileyCanvas" width="400" height="400"></canvas>
         </div>
-        <h1>Hello World!</h1>
-        <p>Have a nice day! 😊</p>
+
+        <div class="controls">
+            <div class="slider-group">
+                <label for="eyeDistance">Eye Distance</label>
+                <input type="range" id="eyeDistance" min="40" max="120" value="80" step="1">
+                <span id="eyeDistanceValue">80</span>
+            </div>
+
+            <div class="slider-group">
+                <label for="smileWidth">Smile Width</label>
+                <input type="range" id="smileWidth" min="80" max="200" value="140" step="1">
+                <span id="smileWidthValue">140</span>
+            </div>
+
+            <div class="slider-group">
+                <label for="smileCurve">Smile Curve</label>
+                <input type="range" id="smileCurve" min="20" max="80" value="50" step="1">
+                <span id="smileCurveValue">50</span>
+            </div>
+        </div>
+
+        <button id="downloadBtn" class="download-btn">Download Smiley</button>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
